@@ -101,8 +101,14 @@ def stock_visualizations(request):
    script2, div2 = components(p2)
    script3, div3 = components(p3)
 
-   context = {"script1":script1, "div1":div1,
-              "script2":script2, "div2":div2,
-               "script3":script3, "div3":div3,}
+   context = {"script1":script1, 
+              "div1":div1,
+              "description1":"This plot provides a monthly price comparison between Dell and S&P 500 over time. The blue line represents Dell while the green line represents the S&P 500 index. It is evident that Dell stock price shows a significant increase in 2022, surpassing the performance of the S&P 500 index, suggesting a strong performance from Dell during this period.",
+              "script2":script2, 
+              "div2":div2,
+              "description2":"This plot displays the monthly percentage change of Dell and S&P 500. The bars represent the month-over-month percentage change in value for each. Dell which represented by blue bars appears to have more pronounced fluctuations compared to the S&P 500 index, suggesting higher volatility in Dell stock price.",
+               "script3":script3, 
+               "div3":div3,
+               "description3":"This plot shows the cumulative returns for Dell stock compared to the S&P 500 index. The shaded areas under the lines represent the value of the investment over time. By early 2024, Dell cumulative returns have substantially outpaced the S&P 500, indicating that an investment in Dell would generate higher return than an investment in the broader market index over this time frame."}
 
    return render(request, "BokehDjango/base.html", context)
