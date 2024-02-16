@@ -6,17 +6,48 @@
    <title>Stock Visualization Dashboard</title>
    <!-- Include Bokeh JS (CSS included within) -->
    <script src="https://cdn.bokeh.org/bokeh/release/bokeh-3.3.4.min.js"></script>
+   <style>
+      body{
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+      }
+      .plot-container{
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+         margin-top: 20px;
+      }
+      .plot-description, .bk-root{
+         width: 60%;
+         margin: auto;
+         text-align: center;
+         }
+      .bk-root{
+         display:inline-block;
+      }
+   </style>
 </head>
 <body>
    <h1>Dell and S&P 500 Stock Visualizations</h1>
+   <div class="plot-description">
+   {{ description1|safe }}</div>
    <!-- Visualization 1 -->
-   {{ div1|safe }}
+   <div class="plot-container">
+   {{ div1|safe }}</div>
    {{ script1|safe }}
+   <div class="plot-description">
+   {{ description2|safe }}</div>
    <!-- Visualization 2 -->
-   {{ div2|safe }}
+   <div class="plot-container">
+   {{ div2|safe }}</div>
    {{ script2|safe }}
+   <div class="plot-description">
+   {{ description3|safe }}</div>
    <!-- Visualization 3 -->
-   {{ div3|safe }}
+   <div class="plot-container">
+   {{ div3|safe }}</div>
    {{ script3|safe }}
 </body>
 </html>
