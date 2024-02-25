@@ -10,7 +10,7 @@ import pandas as pd
 def stock_visualizations(request):
    
    #Load combined stock dataset
-   df = pd.read_csv(r"C:\Users\Chinnyunn_Ong\Downloads\MiniProject1_OngChinnYunn\combined_stock_data.csv", parse_dates=["Date"])
+   df = pd.read_csv(r"C:\Users\Chinnyunn_Ong\Downloads\MiniProject1_OngChinnYunn\dataset\combined_stock_data.csv", parse_dates=["Date"])
    
    #Convert the columns to floats
    df["CloseDELL"] = df["CloseDELL"].replace(",","",regex=True).astype(float)
