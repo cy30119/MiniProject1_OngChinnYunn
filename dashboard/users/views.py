@@ -4,6 +4,7 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 
+#Create function for new user registration
 def register(request):
     if request.method == "POST":
         form = RegisterForm(request.POST)
@@ -14,6 +15,7 @@ def register(request):
         form = RegisterForm()
     return render(request, 'users/register.html', {'form': form})
 
+#Create function for user login, after login redirect to bokeh plot
 def user_login(request):
     if request.method == 'POST':
         form = LoginForm(request, data=request.POST)
@@ -28,6 +30,7 @@ def user_login(request):
         form = LoginForm()
     return render(request, 'users/login.html', {'form': form})
 
+#Create function for user logout
 def user_logout(request):
     logout(request)
     return redirect('login')
